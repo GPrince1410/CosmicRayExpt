@@ -65,41 +65,21 @@ count700 = [0, 0, 0, 0]
 count600 = [0, 0, 0, 0]
 count500 = [0, 0, 0, 0]# counts per channel
 
-for event in events:
-    for pulse in event.pulses:
-        # only count rising edges
-        if pulse.edge == 0:
-            count[pulse.chan] += 1
-for event in aevents:
-    for pulse in event.pulses:
-        # only count rising edges
-        if pulse.edge == 0:
-            count1000[pulse.chan] += 1
-for event in bevents:
-    for pulse in event.pulses:
-        # only count rising edges
-        if pulse.edge == 0:
-            count900[pulse.chan] += 1
-for event in cevents:
-    for pulse in event.pulses:
-        # only count rising edges
-        if pulse.edge == 0:
-            count800[pulse.chan] += 1
-for event in devents:
-    for pulse in event.pulses:
-        # only count rising edges
-        if pulse.edge == 0:
-            count700[pulse.chan] += 1
-for event in eevents:
-    for pulse in event.pulses:
-        # only count rising edges
-        if pulse.edge == 0:
-            count600[pulse.chan] += 1
-for event in fevents:
-    for pulse in event.pulses:
-        # only count rising edges
-        if pulse.edge == 0:
-            count500[pulse.chan] += 1
+def Count(events, countl):
+    for event in events:
+        for pulse in event.pulses:
+            # only count rising edges
+            if pulse.edge == 0:
+                countl[pulse.chan] += 1
+    return countl
+    
+Count(aevents, count1000)
+Count(bevents, count900)
+Count(cevents, count800)
+Count(devents, count700)
+Count(eevents, count600)
+Count(fevents, count500)
+
 print("Counts by channel")
 print("Channel 0 : {} ".format(count[0]))
 print("Channel 1 : {} ".format(count[1]))
