@@ -28,10 +28,6 @@ args = parser.parse_args()
 
 print("Starting analysis")
 
-
-
-print("Read {} events from file".format(n_events))
-
 # example event loop
 count1000 = [0, 0, 0, 0] 
 count900 = [0, 0, 0, 0]
