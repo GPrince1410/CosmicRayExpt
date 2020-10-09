@@ -48,12 +48,12 @@ def Count(countl,file):
                 countl[pulse.chan] += 1
     return countl
     
-Count(count1000, '0Chan1000.txt')
-Count(count900,'0Chan900.txt')
-Count(count800,'0Chan800.txt')
-Count(count700,'0Chan700.txt')
-Count(count600,'0Chan600.txt')
-Count(count500,'0Chan500.txt')
+Count(count1000, '0Chan1000.dat')
+Count(count900,'0Chan900.dat')
+Count(count800,'0Chan800.dat')
+Count(count700,'0Chan700.dat')
+Count(count600,'0Chan600.dat')
+Count(count500,'0Chan500.dat')
 
 print("Counts by channel")
 print("Channel 0 : {} ".format(count[0]))
