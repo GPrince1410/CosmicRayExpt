@@ -34,24 +34,24 @@ ifile = open(args.in_file, 'rb')
 events= pickle.load(ifile)
 n_events= len(events)
 
-10file = open("0Chan1000.dat")
-10events= pickle.load(10file)
-n10_events= len(10events)
-9file = open("0Chan900.dat")
-9events= pickle.load(9file)
-n9_events= len(9events)
-8file = open("0Chan800.dat")
-8events= pickle.load(8file)
-n8_events= len(8events)
-7file = open("0Chan700.dat")
-7events= pickle.load(7file)
-n7_events= len(7events)
-6file = open("0Chan600.dat")
-6events= pickle.load(6file)
-n6_events= len(6events)
-5file = open("0Chan500.dat")
-5events= pickle.load(5file)
-n5_events= len(5events)
+afile = open("0Chan1000.dat")
+aevents= pickle.load(afile)
+n10_events= len(aevents)
+bfile = open("0Chan900.dat")
+bevents= pickle.load(bfile)
+n9_events= len(bevents)
+cfile = open("0Chan800.dat")
+cevents= pickle.load(cfile)
+n8_events= len(cevents)
+dfile = open("0Chan700.dat")
+devents= pickle.load(dfile)
+n7_events= len(devents)
+efile = open("0Chan600.dat")
+eevents= pickle.load(efile)
+n6_events= len(eevents)
+ffile = open("0Chan500.dat")
+fevents= pickle.load(ffile)
+n5_events= len(fevents)
 
 
 print("Read {} events from file".format(n_events))
@@ -70,32 +70,32 @@ for event in events:
         # only count rising edges
         if pulse.edge == 0:
             count[pulse.chan] += 1
-for event in 10events:
+for event in aevents:
     for pulse in event.pulses:
         # only count rising edges
         if pulse.edge == 0:
             count1000[pulse.chan] += 1
-for event in 9events:
+for event in bevents:
     for pulse in event.pulses:
         # only count rising edges
         if pulse.edge == 0:
             count900[pulse.chan] += 1
-for event in 8events:
+for event in cevents:
     for pulse in event.pulses:
         # only count rising edges
         if pulse.edge == 0:
             count800[pulse.chan] += 1
-for event in 7events:
+for event in devents:
     for pulse in event.pulses:
         # only count rising edges
         if pulse.edge == 0:
             count700[pulse.chan] += 1
-for event in 6events:
+for event in eevents:
     for pulse in event.pulses:
         # only count rising edges
         if pulse.edge == 0:
             count600[pulse.chan] += 1
-for event in 5events:
+for event in fevents:
     for pulse in event.pulses:
         # only count rising edges
         if pulse.edge == 0:
