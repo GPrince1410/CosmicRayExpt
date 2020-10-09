@@ -144,9 +144,9 @@ for event in events:
 print("Mean delta-t : {}".format(np.mean(dts)))
 print("Std dev delta-t : {}".format(np.std(dts)))
 
-bins = [count1000[0], count900[0],count800[0],count700[0],count600[0],count500[0]]
+bins = [count1000[0]/10, count900[0]/10,count800[0]/10,count700[0]/10,count600[0]/10,count500[0]/10]
 thresh = [1000,900,800,700,600,500]
-plt.plot(bins, thresh)
-plt.ylabel("Events")
-plt.xlabel('Threshold')
+plt.plot(thresh, bins)
+plt.ylabel("Events/Second")
+plt.xlabel('Threshold (mV)')
 plt.show()
