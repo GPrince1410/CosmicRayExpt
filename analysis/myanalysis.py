@@ -27,36 +27,12 @@ parser.add_argument("-n", "--n_max", help='max number of lines to process')
 args = parser.parse_args()
 
 print("Starting analysis")
-            
-# open the file
-ifile = open(args.in_file, 'rb')
-events= pickle.load(ifile)
-n_events= len(events)
 
-afile = open("0Chan1000.dat")
-aevents= pickle.load(afile)
-n10_events= len(aevents)
-bfile = open("0Chan900.dat")
-bevents= pickle.load(bfile)
-n9_events= len(bevents)
-cfile = open("0Chan800.dat")
-cevents= pickle.load(cfile)
-n8_events= len(cevents)
-dfile = open("0Chan700.dat")
-devents= pickle.load(dfile)
-n7_events= len(devents)
-efile = open("0Chan600.dat")
-eevents= pickle.load(efile)
-n6_events= len(eevents)
-ffile = open("0Chan500.dat")
-fevents= pickle.load(ffile)
-n5_events= len(fevents)
 
 
 print("Read {} events from file".format(n_events))
 
 # example event loop
-count = [0,0,0,0]
 count1000 = [0, 0, 0, 0] 
 count900 = [0, 0, 0, 0]
 count800 = [0, 0, 0, 0]
@@ -64,7 +40,11 @@ count700 = [0, 0, 0, 0]
 count600 = [0, 0, 0, 0]
 count500 = [0, 0, 0, 0]# counts per channel
 
-def Count(events, countl):
+def Count(events, countl,file):
+    
+    ifile = open(file, 'rb')
+    events= pickle.load(ifile)
+    
     for event in events:
         for pulse in event.pulses:
             # only count rising edges
@@ -72,12 +52,12 @@ def Count(events, countl):
                 countl[pulse.chan] += 1
     return countl
     
-Count(aevents, count1000)
-Count(bevents, count900)
-Count(cevents, count800)
-Count(devents, count700)
-Count(eevents, count600)
-Count(fevents, count500)
+Count(aevents, count1000, '0Chan1000.txt')
+Count(bevents, count900,'0Chan900.txt')
+Count(cevents, count800,'0Chan800.txt')
+Count(devents, count700,'0Chan700.txt')
+Count(eevents, count600,'0Chan600.txt')
+Count(fevents, count500,'0Chan500.txt')
 
 print("Counts by channel")
 print("Channel 0 : {} ".format(count[0]))
