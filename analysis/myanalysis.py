@@ -36,7 +36,7 @@ count700 = [0, 0, 0, 0]
 count600 = [0, 0, 0, 0]
 count500 = [0, 0, 0, 0]# counts per channel
 
-def Count(events, countl,file):
+def Count(countl,file):
     
     ifile = open(file, 'rb')
     events= pickle.load(ifile)
@@ -48,12 +48,12 @@ def Count(events, countl,file):
                 countl[pulse.chan] += 1
     return countl
     
-Count(aevents, count1000, '0Chan1000.txt')
-Count(bevents, count900,'0Chan900.txt')
-Count(cevents, count800,'0Chan800.txt')
-Count(devents, count700,'0Chan700.txt')
-Count(eevents, count600,'0Chan600.txt')
-Count(fevents, count500,'0Chan500.txt')
+Count(count1000, '0Chan1000.txt')
+Count(count900,'0Chan900.txt')
+Count(count800,'0Chan800.txt')
+Count(count700,'0Chan700.txt')
+Count(count600,'0Chan600.txt')
+Count(count500,'0Chan500.txt')
 
 print("Counts by channel")
 print("Channel 0 : {} ".format(count[0]))
