@@ -38,7 +38,7 @@ count500 = [0, 0, 0, 0]# counts per channel
 
 def Count(countl,file):
     
-    ifile = open(file, 'rb')
+    ifile = open(file)
     events= pickle.load(ifile)
     
     for event in events:
