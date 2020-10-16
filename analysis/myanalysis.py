@@ -60,15 +60,20 @@ counts1 = [count1000[1], count900[1],count800[1],count700[1],count600[1],count50
 counts2 = [count1000[2], count900[2],count800[2],count700[2],count600[2],count500[2],count400[2],count300[2],count200[2],count100[2]]
 counts3 = [count1000[3], count900[3],count800[3],count700[3],count600[3],count500[3],count400[3],count300[3],count200[3],count100[3]]
 thresh = [1000,900,800,700,600,500,400,300,200,100]
-error0 = [np.sqrt(x) for x in counts0]
-error1 = [np.sqrt(x) for x in counts1]
-error2 = [np.sqrt(x) for x in counts2]
-error3 = [np.sqrt(x) for x in counts3]
+time = 300
+error0 = [np.sqrt(x)/time for x in counts0]
+error1 = [np.sqrt(x)/time for x in counts1]
+error2 = [np.sqrt(x)/time for x in counts2]
+error3 = [np.sqrt(x)/time for x in counts3]
+counts0[:] = [x/300 for x in counts0]
+counts1[:] = [x/300 for x in counts1]
+counts2[:] = [x/300 for x in counts2]
+counts3[:] = [x/300 for x in counts3]
 plt.errorbar(thresh, counts0, yerr = error0, fmt = 'k', label = 'CH0')
 plt.errorbar(thresh, counts1, yerr = error1, fmt = 'r', label = 'CH1')
 plt.errorbar(thresh, counts2, yerr = error2, fmt = 'g', label = 'CH2')
 plt.errorbar(thresh, counts3, yerr = error3, fmt = 'b', label = 'CH3')
-plt.ylabel("Events")
+plt.ylabel("Events/Second")
 plt.xlabel('Threshold (mV)')
 plt.legend()
 plt.show()
