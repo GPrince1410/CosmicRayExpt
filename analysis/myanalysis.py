@@ -19,22 +19,16 @@ import argparse
 
 from event import Event, Pulse
 
-parser = argparse.ArgumentParser(description='Analyse CSV file')
-parser.add_argument("-i", "--in_file", help="input file")
-parser.add_argument("-o", "--out_file", help='output file')
-parser.add_argument("-n", "--n_max", help='max number of lines to process')
-
-args = parser.parse_args()
-
 print("Starting analysis")
 
 # example event loop
-count1000 = [0, 0, 0, 0] 
-count900 = [0, 0, 0, 0]
-count800 = [0, 0, 0, 0]
-count700 = [0, 0, 0, 0]
-count600 = [0, 0, 0, 0]
-count500 = [0, 0, 0, 0]# counts per channel
+count1000 = np.zeroes(4) 
+count900 = np.zeroes(4) 
+count800 = np.zeroes(4) 
+count700 = np.zeroes(4) 
+count600 = np.zeroes(4) 
+count500 = np.zeroes(4) 
+# counts per channel
 
 def Count(countl,file):
     
