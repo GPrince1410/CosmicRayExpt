@@ -22,6 +22,7 @@ from event import Event, Pulse
 print("Starting analysis")
 
 # example event loop
+<<<<<<< HEAD
 count1000 = [0, 0, 0, 0] 
 count900 = [0, 0, 0, 0]
 count800 = [0, 0, 0, 0]
@@ -32,6 +33,15 @@ count400 = [0, 0, 0, 0]
 count300 = [0, 0, 0, 0]
 count200 = [0, 0, 0, 0]
 count100 = [0, 0, 0, 0]
+=======
+count1000 = np.zeroes(4) 
+count900 = np.zeroes(4) 
+count800 = np.zeroes(4) 
+count700 = np.zeroes(4) 
+count600 = np.zeroes(4) 
+count500 = np.zeroes(4) 
+# counts per channel
+>>>>>>> d0f031e4868a6c1d14f3ceba27958624ef6f1fb5
 
 def Count(countl,file):
 
