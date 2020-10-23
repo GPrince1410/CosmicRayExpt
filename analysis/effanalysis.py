@@ -54,6 +54,9 @@ n0_coinc = 0
 n1_coinc = 0
 n2_coinc = 0
 n3_coinc = 0
+n1_true = 0
+n2_true = 0
+n3_true = 0
 for event in events:
     found0 = False
     found1 = False
@@ -69,22 +72,24 @@ for event in events:
             found2 = True
         if pulse.edge==0 and pulse.chan == 3:
             found3 = True
-    if found1 and found2:
-        n0_coinc += 1
+    if found1 and found0 and found2:
+        n1_true += 1
     if found0 and found2:
         n1_coinc += 1
+    if found1 and found2 and found3:
+        n2_true += 1
     if found1 and found3:
         n2_coinc += 1
+    if found0 and found1 and found3:
+        n3_true += 1
     if found0 and found1:
         n3_coinc += 1
+    if found1 and found2:
+        n0_coinc += 1
         
-print("N (0,1) coincidences : {}".format(n3_coinc))
-print("N (1,2) coincidences : {}".format(n0_coinc))
-print("N (0,2) coincidences : {}".format(n1_coinc))
-print("N (1,3) coincidences : {}".format(n2_coinc))
 
-print("Channel 0 efficiency: ", np.float(n0_coinc/count[0]))
-print("Channel 1 efficiency: ", np.float(n1_coinc/count[1]))
-print("Channel 2 efficiency: ", np.float(n2_coinc/count[2]))
-print("Channel 3 efficiency: ", np.float(n3_coinc/count[3]))
+print("Channel 0 efficiency: ", np.float(n1_true)/np.float(n0_coinc))
+print("Channel 1 efficiency: ", np.float(n1_true)/np.float(n1_coinc))
+print("Channel 2 efficiency: ", np.float(n2_true)/np.float(n2_coinc))
+print("Channel 3 efficiency: ", np.float(n3_true)/np.float(n3_coinc))
 
