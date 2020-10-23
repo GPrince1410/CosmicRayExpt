@@ -79,6 +79,9 @@ for event in events:
         n3_coinc += 1
         
 print("N (0,1) coincidences : {}".format(n3_coinc))
+print("N (1,2) coincidences : {}".format(n0_coinc))
+print("N (0,2) coincidences : {}".format(n1_coinc))
+print("N (1,3) coincidences : {}".format(n2_coinc))
 
 print("Channel 0 efficiency: ", np.float(count[0]/n0_coinc))
 print("Channel 1 efficiency: ", np.float(count[1]/n1_coinc))
