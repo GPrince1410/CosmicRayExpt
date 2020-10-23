@@ -87,9 +87,13 @@ for event in events:
     if found1 and found2:
         n0_coinc += 1
         
-
-print("Channel 0 efficiency: {}%".format(np.float16((np.float16(n1_true)/np.float16(n0_coinc))*100)))
-print("Channel 1 efficiency: {}%".format(np.float16((np.float16(n1_true)/np.float16(n1_coinc))*100)))
-print("Channel 2 efficiency: {}%".format(np.float16((np.float16(n2_true)/np.float16(n2_coinc))*100)))
-print("Channel 3 efficiency: {}%".format(np.float16((np.float16(n3_true)/np.float16(n3_coinc))*100)))
+chan0 = count[0]
+chan1 = count[1]
+chan2 = count[2]
+chan3 = count[3]
+        
+print("Channel 0 efficiency: {}%".format(np.float16((np.float16(n1_true)/np.float16(chan0))*100)))
+print("Channel 1 efficiency: {}%".format(np.float16((np.float16(n1_true)/np.float16(chan1))*100)))
+print("Channel 2 efficiency: {}%".format(np.float16((np.float16(n2_true)/np.float16(chan2))*100)))
+print("Channel 3 efficiency: {}%".format(np.float16((np.float16(n3_true)/np.float16(chan3))*100)))
 
