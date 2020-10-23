@@ -88,8 +88,8 @@ for event in events:
         n0_coinc += 1
         
 
-print("Channel 0 efficiency: ", np.float(n1_true)/np.float(n0_coinc))
-print("Channel 1 efficiency: ", np.float(n1_true)/np.float(n1_coinc))
-print("Channel 2 efficiency: ", np.float(n2_true)/np.float(n2_coinc))
-print("Channel 3 efficiency: ", np.float(n3_true)/np.float(n3_coinc))
+print("Channel 0 efficiency: {} ".format((np.float16(n1_true)/np.float16(n0_coinc))*100))
+print("Channel 1 efficiency: {} ".format((np.float16(n1_true)/np.float16(n1_coinc))*100))
+print("Channel 2 efficiency: {} ".format((np.float16(n2_true)/np.float16(n2_coinc))*100))
+print("Channel 3 efficiency: {} ".format((np.float16(n3_true)/np.float16(n3_coinc))*100))
 
