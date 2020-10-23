@@ -92,8 +92,8 @@ chan1 = count[1]
 chan2 = count[2]
 chan3 = count[3]
         
-print("Channel 0 efficiency: {}%".format(np.float16((np.float16(n0_coinc)/np.float16(chan0))*100)))
-print("Channel 1 efficiency: {}%".format(np.float16((np.float16(n1_coinc)/np.float16(chan1))*100)))
-print("Channel 2 efficiency: {}%".format(np.float16((np.float16(n2_coinc)/np.float16(chan2))*100)))
-print("Channel 3 efficiency: {}%".format(np.float16((np.float16(n3_coinc)/np.float16(chan3))*100)))
+print("Channel 0 efficiency: {}%".format(np.float16((np.float16(n1_true)/np.float16(chan0))*100)))
+print("Channel 1 efficiency: {}%".format(np.float16((np.float16(n1_true)/np.float16(chan1))*100)))
+print("Channel 2 efficiency: {}%".format(np.float16((np.float16(n2_true)/np.float16(chan2))*100)))
+print("Channel 3 efficiency: {}%".format(np.float16((np.float16(n3_true)/np.float16(chan3))*100)))
 
