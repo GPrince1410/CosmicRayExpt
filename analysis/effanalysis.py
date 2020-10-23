@@ -57,6 +57,8 @@ n3_coinc = 0
 for event in events:
     found0 = False
     found1 = False
+    found2 = False
+    found3 = False
     for pulse in event.pulses:
         # only count rising edges
         if pulse.edge==0 and pulse.chan == 0:
